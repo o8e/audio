@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build:live",
     "build": "tsc -p .",
+    "dummy": "npm run build && node ./lib -p ~/Downloads/Tracks/",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "author": "Ollie Tribe <tribe@myself.com>",
@@ -15,5 +16,8 @@
     "nodemon": "^1.18.9",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
   }
 }
