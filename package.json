@@ -1,0 +1,11 @@
+{
+  "name": "audio",
+  "version": "1.0.0",
+  "description": "An audio utility CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ollie Tribe <tribe@myself.com>",
+  "license": "ISC"
+}
