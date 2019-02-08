@@ -1,13 +1,20 @@
+// @ts-ignore
+import id3 from 'node-id3'
 import { last } from 'lodash'
 import * as util from 'util'
 import * as fs from 'fs'
 
 const readdir = util.promisify(fs.readdir)
 
-export const extractApply = async (path: string) => {
+export const format = async (path: string) => {
   const files = await readdir(path)
   for (const file of files) {
-    const isMP3 = last(file.split('.')) === 'mp3'
-    console.log(isMP3, file)
+    if (isMP3(file)) {
+      const [artist, title] = file.split(' - ')
+      const tags = { title, artist }
+      return id3.write(tags, `${path}/${file}`)
+    }
   }
 }
+
+const isMP3 = (filename: string) => last(filename.split('.')) === 'mp3'
