@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "node-id3": "^0.1.7"
   }
 }
